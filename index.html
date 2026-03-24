@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tanishka Agrawal | Portfolio</title>
+
+  <!-- ============ GOOGLE FONTS ============ -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ============ CSS ============ -->
+  <style>
+    :root{
+      --primary:#6C63FF;
+      --dark:#0f172a;
+      --light:#f8fafc;
+      --gray:#94a3b8;
+      --card:#111827;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(120deg,#0f172a,#111827,#0b1220);
+      color:var(--light);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* ============ NAVBAR ============ */
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      background:rgba(15,23,42,0.8);
+      backdrop-filter:blur(10px);
+      padding:14px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    nav h2{color:white;font-weight:700;letter-spacing:1px}
+
+    nav ul{display:flex;gap:28px;list-style:none}
+    nav a{
+      color:var(--gray);
+      text-decoration:none;
+      font-size:14px;
+      transition:.3s;
+    }
+    nav a:hover{color:white}
+
+    /* ============ SECTIONS ============ */
+    section{padding:110px 8%}
+
+    /* ============ HERO ============ */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+    }
+
+    .hero-text{flex:1}
+    .hero-text h1{
+      font-size:48px;
+      margin-bottom:10px;
+    }
+
+    .highlight{color:var(--primary)}
+
+    .hero-text h3{
+      font-weight:400;
+      color:var(--gray);
+      margin-bottom:20px;
+    }
+
+    .hero-text p{max-width:520px;margin-bottom:30px}
+
+    .btn{
+      display:inline-block;
+      padding:12px 22px;
+      background:var(--primary);
+      color:white;
+      border-radius:8px;
+      text-decoration:none;
+      transition:.3s;
+      box-shadow:0 10px 25px rgba(108,99,255,.35);
+    }
+    .btn:hover{transform:translateY(-3px)}
+
+    .hero-card{
+      flex:1;
+      background:linear-gradient(145deg,#0b1220,#111827);
+      border-radius:20px;
+      padding:40px;
+      box-shadow:0 20px 50px rgba(0,0,0,.4);
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    /* ============ SECTION TITLES ============ */
+    .title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+    .title h2{font-size:32px;margin-bottom:10px}
+    .title p{color:var(--gray)}
+
+    /* ============ CARDS GRID ============ */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:26px;
+    }
+
+    .card{
+      background:var(--card);
+      padding:26px;
+      border-radius:16px;
+      transition:.35s;
+      border:1px solid rgba(255,255,255,.05);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(108,99,255,.5);
+    }
+
+    .card h3{margin-bottom:12px}
+    .card p{color:var(--gray);font-size:14px}
+
+    /* ============ SKILLS ============ */
+    .skill{
+      margin-bottom:18px;
+    }
+
+    .skill span{
+      display:flex;
+      justify-content:space-between;
+      font-size:14px;
+      margin-bottom:6px;
+    }
+
+    .bar{
+      height:8px;
+      background:#1f2937;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .progress{
+      height:100%;
+      width:0;
+      background:var(--primary);
+      border-radius:10px;
+      transition:1.2s ease;
+    }
+
+    /* ============ CONTACT ============ */
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{color:var(--gray);margin-bottom:20px}
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:var(--gray);
+      border-top:1px solid rgba(255,255,255,.05);
+    }
+
+    /* ============ SCROLL ANIMATION ============ */
+    .reveal{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ============ NAVBAR ============ -->
+  <nav>
+    <h2>Portfolio</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero" id="home">
+    <div class="hero-text reveal">
+      <h1>Hi, I'm <span class="highlight">Tanishka Agrawal</span></h1>
+      <h3>Java Developer • Backend Enthusiast • UI/UX Learner</h3>
+      <p>
+        Passionate developer focused on building real-world software solutions.
+        Experienced in backend systems, APIs, databases, and modern app development.
+      </p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+
+    <div class="hero-card reveal">
+      <h3>Profile Summary</h3>
+      <p>
+        • Java Developer Intern with hands-on project experience<br>
+        • Strong foundation in Data Structures & Problem Solving<br>
+        • Experience building full-stack and mobile-integrated systems<br>
+        • Interested in scalable backend architecture
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT SECTION ============ -->
+  <section id="about">
+    <div class="title reveal">
+      <h2>About Me</h2>
+      <p>Introduction & Career Objective</p>
+    </div>
+
+    <div class="grid">
+      <div class="card reveal">
+        <h3>Education</h3>
+        <p>
+          B.Tech Student (Semester 3)<br>
+          Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Career Goal</h3>
+        <p>
+          To design scalable and user-friendly software solutions
+          while continuously improving development and design skills.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Interests</h3>
+        <p>
+          Backend Engineering • System Design • UI/UX Design •
+          Real-time Applications • Developer Communities
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS SECTION ============ -->
+  <section id="projects">
+    <div class="title reveal">
+      <h2>Projects</h2>
+      <p>Practical Work & Implementations</p>
+    </div>
+
+    <div class="grid">
+      <div class="card reveal">
+        <h3>ATM Interface System</h3>
+        <p>
+          Desktop banking simulation with deposit, withdrawal, transfer,
+          transaction history, and balance management using Java.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Hospital Management System</h3>
+        <p>
+          End-to-end hospital operations software including patient records,
+          staff management, and appointment handling.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Hotel Facility Management with QR & AI Agent</h3>
+        <p>
+          Smart service management platform using QR workflows and
+          AI-based assistance for operational efficiency.
+        </p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Vayalum – Farmer Assistance App</h3>
+        <p>
+          AI-powered agriculture support app with voice assistance,
+          SMS alerts, and crop disease detection via image analysis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS SECTION ============ -->
+  <section id="skills">
+    <div class="title reveal">
+      <h2>Technical Skills</h2>
+      <p>Tools & Technologies</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="skill">
+        <span><span>Java</span><span>90%</span></span>
+        <div class="bar"><div class="progress" data-width="90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span><span>Python & Flask</span><span>80%</span></span>
+        <div class="bar"><div class="progress" data-width="80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span><span>SQL & Databases</span><span>85%</span></span>
+        <div class="bar"><div class="progress" data-width="85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span><span>React Native / Flutter</span><span>75%</span></span>
+        <div class="bar"><div class="progress" data-width="75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <span><span>APIs, WebSockets, Firebase</span><span>78%</span></span>
+        <div class="bar"><div class="progress" data-width="78%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section id="contact" class="contact">
+    <div class="title reveal">
+      <h2>Contact</h2>
+      <p>Let's Connect</p>
+    </div>
+
+    <p class="reveal">
+      Open to internships, collaborations, and developer opportunities.
+    </p>
+
+    <a href="mailto:your-email@example.com" class="btn reveal">Send Email</a>
+  </section>
+
+  <footer>
+    © 2026 Tanishka Agrawal • Portfolio Website
+  </footer>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+    // ===== Scroll Reveal Animation =====
+    function revealOnScroll(){
+      const reveals = document.querySelectorAll('.reveal');
+      for(const el of reveals){
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const visiblePoint = 120;
+        if(elementTop < windowHeight - visiblePoint){
+          el.classList.add('active');
+        }
+      }
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // ===== Animated Skill Bars =====
+    function animateSkills(){
+      const skills = document.querySelectorAll('.progress');
+      skills.forEach(bar=>{
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width;
+      });
+    }
+
+    window.addEventListener('load', animateSkills);
+  </script>
+</body>
+</html>
